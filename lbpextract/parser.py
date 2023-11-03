@@ -352,7 +352,6 @@ def parse_section(
 
 
 def parse_sections(lines, coordinates, has_francs=False):
-    current_section = None
     end = None
     sections = []
     unrecognized_lines = []
@@ -378,12 +377,14 @@ def parse_sections(lines, coordinates, has_francs=False):
                 if black_snippet in line:
                     found_black = True
             if not found_black:
-                logging.debug(f"Unrecognized line {start}:\n{line}")
+                logging.debug("Unrecognized line %s:\n%s", start, line)
                 unrecognized_lines.append(line)
     unrecognized_lines = "\n".join(unrecognized_lines).strip()
     if unrecognized_lines:
         logging.warning(
-            f"Unrecognized lines (please check if we missed important data):\n{unrecognized_lines}\n"
+            "Unrecognized lines (please check if we missed "
+            "important data):\n%s\n",
+            unrecognized_lines,
         )
     else:
         logging.info("No unrecognized line.")
