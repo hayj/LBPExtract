@@ -1,7 +1,7 @@
 # LBP Extract
 
-Cet outil permet de convertir vos relevé de compte PDF La Banque Postale en fichier lisible dans des logiciels de type tableur (csv).
-Il vous suffit d'installer l'outil, rassembler vos PDFs dans un dossier et executer l'outil, vous aurez alors un ensemble de fichier csv qui apparaitront dans le dossier correspondant à vos comptes. 
+Cet outil permet de convertir vos relevés de compte PDF La Banque Postale en fichier CSV lisibles dans des logiciels de type tableur comme Excel et LibreOffice Calc.
+Il vous suffit d'installer l'outil, rassembler vos PDFs dans un dossier et executer l'outil, vous aurez alors un ensemble de fichiers CSV qui apparaitront dans le dossier contenant vos relevés. 
 
 ## Assembler vos relevés de compte
 
@@ -9,7 +9,7 @@ Il vous suffit d'installer l'outil, rassembler vos PDFs dans un dossier et execu
  2. Allez sur votre espace client -> Documents et suivi -> Relevé et documents -> Recherche avancée
  3. Choisissez un compte et une année puis cliquez sur Rechercher
  4. Télécharger les fichiers un par un (attention à ne pas en ouvrir plusieurs à la fois, cela ne fonctionne pas)
- 5. Déplacez tous ces fichiers dans le dossier initialement créé.
+ 5. Déplacez tous ces fichiers dans le dossier initialement créé
 
 ## Installation de LBPExtract
 
@@ -48,6 +48,8 @@ Naviguez vers le répertoire où se trouvent vos fichiers PDF que vous souhaitez
 ```
 cd /chemin/vers/votre/dossier
 ```
+
+Alternativement, dans l'explorateur de fichiers, vous pouvez maintenir la touche "Maj" enfoncée tout en cliquant avec le bouton droit de la souris dans le répertoire, puis choisir "Ouvrir une fenêtre de commande ici" pour ouvrir l'invite de commande.
 
 Une fois dans le répertoire cible, vous pouvez exécuter la commande suivante pour utiliser "lbpextract" et extraire des données à partir de tous les fichiers PDF présents :
 
