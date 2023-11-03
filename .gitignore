@@ -1,7 +1,14 @@
+# Ignore build artifacts
+build/
+dist/
 __pycache__/
 *.pyc
 *.pyo
+
+# Ignore distribution packages
 *.egg-info/
-dist/
-build/
-venv/
+*.egg
+*.egg-info
+*.dist-info
+*.whl
+
