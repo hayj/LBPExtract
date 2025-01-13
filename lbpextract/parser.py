@@ -48,6 +48,9 @@ section_types = [
     "operation_suite",
 ]
 black_snippets = [
+    "Vous avez adhéré au contrat d'assurance All",
+    "Conformément à la loi du 17 mars 2014 relative à la consommation",
+    "dès le lendemain de sa première date anniversaire.",
     "Banque Postale fait évoluer les conditions",
     "Désormais, nous vous informons que La Banque",
     "communiquera toute information utile relative",
@@ -237,9 +240,14 @@ def parse_section(
                 return None, current_index
         raise Exception(f"Did not find the end of {section}.")
     elif section == "main":
-        assert "Relevé de" in lines[index]
+        assert "Relevé de" in lines[index] or "> Périodicité mensuelle" in lines[index]
         rest = "\n".join(lines[index + 1 : index + 30])
-        assert "Vos" in rest and "Périodicité" in rest, rest
+        assert (
+            "Vos" in rest
+            and "Téléphone" in rest
+            and "conseiller" in rest
+            and "3639" in rest
+        ), rest
         for index in range(index, len(lines)):
             releve_string = "Relevé édité le "
             if releve_string in lines[index]:
@@ -382,8 +390,7 @@ def parse_sections(lines, coordinates, has_francs=False):
     unrecognized_lines = "\n".join(unrecognized_lines).strip()
     if unrecognized_lines:
         logging.warning(
-            "Unrecognized lines (please check if we missed "
-            "important data):\n%s\n",
+            "Unrecognized lines (please check if we missed " "important data):\n%s\n",
             unrecognized_lines,
         )
     else:
