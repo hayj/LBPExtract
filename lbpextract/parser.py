@@ -246,7 +246,7 @@ def parse_section(
             "Vos" in rest
             and "Téléphone" in rest
             and "conseiller" in rest
-            and "3639" in rest
+            and ("3639" in rest or "36 39" in rest)
         ), rest
         for index in range(index, len(lines)):
             releve_string = "Relevé édité le "
